@@ -1,0 +1,4 @@
+src/.env
+src/openai_api_deneme.py
+src/__pycache__/
+data/ceza_kanunu.pdf
