@@ -29,14 +29,12 @@ def rag(query, page_db, chunk_db):
         for doc in page_docs + chunk_docs
     ])
 
-    # System instruction (You can adapt this to your exact use-case/prompt style)
     system_prompt = (
         "Sen Türkçe konuşan bir yasal asistanısın. Kullanıcı soruyu sorduğunda, "
         "yalnızca sana verilen bağlamdaki bilgiyi kullanarak Türkçe yanıt ver. "
         "Eğer bilgiyi bağlamda bulamazsan, 'Bağlamda cevap bulunamadı.' şeklinde yanıt ver."
     )
 
-    # Construct the final message for GPT-4
     context_prompt = f"""
 ### BAĞLAM
 {chunk_content}
@@ -52,10 +50,9 @@ def rag(query, page_db, chunk_db):
 - Yanıtı Türkçe olarak ver.
 """
 
-    # Initialize a ChatOpenAI with GPT-4
     llm = ChatOpenAI(
-        model_name="gpt-4",  # or "gpt-4-32k", depending on your access
-        temperature=0.1,       # or a higher temperature if you want more creative answers
+        model_name="gpt-4",  
+        temperature=0.1,       
         openai_api_key = api_key,
     )
 
