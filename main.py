@@ -23,7 +23,6 @@ query_list = [
     "Kanunların Anayasaya uygunluğunu kim denetler?",
 ]
 
-# PDF path (adjust to your environment)
 pdf_file = "data/gerekceli_anayasa.pdf"
 page_db, chunk_db = load_vector_store(pdf_file)
 
